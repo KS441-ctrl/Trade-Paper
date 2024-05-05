@@ -1,0 +1,61 @@
+<div class="mainContainer">
+    <div class="holdingHeading">
+        Holdings ({{holdings.length}})  
+    </div>
+    <hr style=" margin-left: 20px;">
+    <div *ngIf="!isLoading">
+        <div class="totalContainer">
+            <div class="totalCard">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <div style="font-size: 16px; color: white;">
+                        Invested : <span style="font-size: 20px; font-weight: 500; color: white;">{{getTotal() |number:'1.2-2'}}</span>
+                    </div>
+                    <div style="font-size: 16px; color: white;">
+                        Current : <span style="font-size: 20px; font-weight: 500; color: white;">{{currentInvestment|number:'1.2-2'}}</span>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="font-size: 20px; color: white;">P&L :</div>
+                    <div style="display: flex; gap: 10px; color: {{ (currentHoldings - totalInvestment) >= 0 ? 'green' : '#db0404' }}">
+                        <div style="font-weight: 500; font-size: 20px;">{{ (currentInvestment - totalInvestment)|number:'1.2-2' }}</div>
+                        <div style="margin-top: 3px;">{{ (currentHoldings - totalInvestment) >= 0 ? '+ ' : '' }}{{ ((currentInvestment - totalInvestment) / totalInvestment * 100) | number:'1.2-2' }}%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="holdingContainer" style="cursor: pointer;" *ngFor="let stock of holdings; let i = index" (click)="openDialog('500ms', '300ms', stock?.stock_name, stock?._id ,stock?.qty, currentHoldings[i]?.priceInfo?.lastPrice)">
+            <div class="holdingCard">
+                <div class="cardRow" style="margin-bottom: 10px;">
+                    <div style="display: flex; gap: 15px;">
+                        <div style="color: grey; font-size: 14px;">Qty : {{stock?.qty}}</div>
+                        <div style="color: grey; font-size: 14px;">Avg : {{stock?.price}}</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 14px; color: {{(currentHoldings[i]?.priceInfo?.lastPrice - stock?.price) >=0 ? 'green' : '#db0404'}}">
+                            {{(currentHoldings[i]?.priceInfo?.lastPrice - stock?.price) >= 0 ? "+ " : "" }}{{((currentHoldings[i]?.priceInfo?.lastPrice - stock?.price)/stock?.price * 100) | number:'1.2-2'}}%
+                        </div>
+                    </div>
+                </div>
+                <div class="cardRow" style="margin-bottom: 10px;">
+                    <div style="font-size: 20px; font-weight: 500;">
+                        {{stock?.stock_name}}
+                    </div>
+                    <div style=" font-size: 18px; color: {{(currentHoldings[i]?.priceInfo?.lastPrice - stock?.price) >=0 ? 'green' : '#db0404'}}">
+                        {{(currentHoldings[i]?.priceInfo?.lastPrice - stock?.price) >= 0 ? "+ " : "" }}{{((currentHoldings[i]?.priceInfo?.lastPrice - stock?.price)*stock?.qty) | number:'1.2-2'}}
+                    </div>
+                </div>
+                <div class="cardRow">
+                    <div style="color: grey; font-size: 14px;">
+                        Invested : {{(stock?.qty * stock?.price) | number:'1.2-2'}}
+                    </div>
+                    <div style="color: grey; font-size: 14px;">
+                        LTP : {{currentHoldings[i]?.priceInfo?.lastPrice}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isLoading">
+        Please Wait. Page is loading    
+    </div>
+</div>

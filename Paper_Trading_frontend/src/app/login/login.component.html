@@ -1,0 +1,26 @@
+
+<div class="mainContaioner">
+    <div class="welcomeContainer">
+        Welcome to the Paper Trading App
+    </div>
+    <div class="registerTitle">
+        Log in to continue
+    </div>
+        <form [formGroup]="registerForm"  class="formContainer">
+            <div class="inputContainer">
+                <label for="email">Email :</label>
+                <input type="email" formControlName="email" class="inputStyle">
+                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error">
+                    {{ getErrorMessage('email') }}
+                  </div>
+            </div>
+            <div class="inputContainer">
+                <label for="password">Password :</label>
+                <input type="password" formControlName="password" class="inputStyle">
+                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error">
+                    {{ getErrorMessage('password') }}
+                  </div>
+            </div>
+            <button type="submit" class="button" style="background-color: #a254eb; color: white;" (click)="onSubmit($event)">Log In</button>
+        </form>
+</div>

@@ -1,0 +1,25 @@
+.mainContainer{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stockContainer{
+    width: 90%;
+    border: 1px solid black;
+    padding: 30px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.inputBox{
+    width: 60%;
+    height: 30px;
+    margin-bottom: 15px;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    padding: 5px 15px
+}

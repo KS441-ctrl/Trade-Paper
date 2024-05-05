@@ -1,0 +1,47 @@
+.mainContainer{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.holdingHeading{
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 20px
+}
+
+.holdingContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.holdingCard{
+    width: 90%;
+    border: 1px solid grey;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+
+}
+
+.cardRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.totalCard{
+    /* border: 1px solid black; */
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #989799;
+    min-width: 70%;
+    border-radius: 10px;
+}

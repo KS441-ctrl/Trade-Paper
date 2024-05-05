@@ -1,0 +1,38 @@
+.mainContainer{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.nameContainer{
+    padding-left: 3%;
+    font-size: 34px;
+    font-weight: lighter;
+    margin-bottom: 15px;
+}
+
+.holdingsDiv{
+    padding-left: 3%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.holdingsDiv2{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+.profitContainer{
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    border-right: 1px solid lightgray;
+    padding: 20px 30px;
+}
+
+.captialContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+}

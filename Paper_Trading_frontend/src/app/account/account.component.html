@@ -1,0 +1,37 @@
+<div class="mainContainer">
+    <div style="display: flex; justify-content: space-between;">
+        <div class="accountHeading">Account</div>
+        <div style="width:80px; margin-right: 15px; align-content: center; cursor: pointer; font-size: medium;" (click)="removeUser()">
+            Log out
+        </div>
+    </div>
+    
+    <hr style=" margin-left: 20px;">
+    <div class="contentContainer">
+        <!-- <div class="singleContainer">
+            <div style="font-size: 18px; font-weight: 500;">UserId : </div>
+            <div>12345</div>
+        </div> -->
+        <div class="singleContainer">
+            <div style="font-size: 18px; font-weight: 500;">Name : </div>
+            <div>{{userData?.data?.username}}</div>
+        </div>
+        <div class="singleContainer">
+            <div style="font-size: 18px; font-weight: 500;">Email : </div>
+            <div>{{userData?.data?.email}}</div>
+        </div>
+        
+    </div>
+    <div class="accountHeading" style="margin-top: 35px;">Funds </div>
+    <hr style=" margin-left: 20px;">
+    <div style="display: flex;" class="singleContainer">
+            <span style="font-size: 18px; font-weight: 500;">Funds Remaining :</span>
+            <span>{{(amount?.amount ) | number:'1.2-2'}}</span>
+    </div>
+    <div class="accountHeading" style="margin-top: 35px;">
+        P&L Statement</div>
+    <hr style=" margin-left: 20px;">
+    <div>
+        
+    </div>
+</div>

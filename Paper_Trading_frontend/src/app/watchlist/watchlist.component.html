@@ -1,0 +1,13 @@
+<div class="mainContainer">
+    <div style="width: 100%; justify-content: center; display: flex">
+        <input
+            type="text"
+            placeholder="Search the stock name here"
+            class="inputBox"
+            (change)="filterStock($event)"
+        />
+    </div>
+    <div class="stockContainer" *ngFor="let stock of filteredSymbolsList" (click)="openDialog('500ms', '300ms', $event, stock)">
+        <div>{{ stock }}</div>
+    </div>
+</div>
