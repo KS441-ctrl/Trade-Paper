@@ -1,11 +1,11 @@
 #!/bin/bash
 # Start backend
 cd paper_trading_backend
-nest start --watch
+npm run start:prod
 
 # Return to the root directory
 cd ..
 
 # Start frontend
 cd Paper_Trading_frontend
-ng serve
+npm run serve:ssr:Stock_Simulator
